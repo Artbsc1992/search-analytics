@@ -1,5 +1,5 @@
 <%= turbo_frame_tag "articles" do %>
   <% articles.each do |article| %>
-    <%= render "article_card", article: article %>
+    <%= render "article_item", article: article %>
   <% end %>
 <% end %>
