@@ -1,15 +1,25 @@
-<%= form_with(url: articles_path, method: :get, data: {controller: "search-input", turbo_frame: "articles", turbo_action: "advance"}) do |form| %>
-  <%= form.text_field :query, 
-    value: params[:query], 
-    placeholder: "Search articles by title", 
-    data: {action: "input->search-input#search"}
-  %>
-  <%= form.hidden_field :confirmed, id: "search-input", value: nil %> 
-  <%= form.submit "Search" %>
-<% end %>
+<div class="index">
 
-<div class="articles">
-  <%= render "articles", articles: @articles %>
+  <div>
+    <h1>Most popular books</h1>
+  </div>
+
+
+
+  <%= form_with(url: articles_path, method: :get, data: {controller: "search-input", turbo_frame: "articles", turbo_action: "advance"}, class: "search-bar" ) do |form| %>
+    <%= form.text_field :query, 
+      value: params[:query], 
+      placeholder: "Search articles by title", 
+      data: {action: "input->search-input#search"}
+    %>
+    <%= form.hidden_field :confirmed, id: "search-input", value: nil %> 
+    <%= form.submit "Search" %>
+  <% end %>
+
+  <div class="articles">
+    <%= render "articles", articles: @articles %>
+  </div>
+
+  <%= will_paginate @articles %>
+
 </div>
-
-<%= will_paginate @articles %>

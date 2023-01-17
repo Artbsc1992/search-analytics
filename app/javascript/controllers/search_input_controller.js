@@ -12,12 +12,11 @@ export default class extends Controller {
     textInput.addEventListener('focusout', () => {
       searchInput.value = true;
       this.element.requestSubmit();
-      console.log(searchInput)
     });
     
-    textInput.addEventListener('focusin', () => {
-      searchInput.value = null;
-    });
+    // textInput.addEventListener('focusin', () => {
+    //   searchInput.value = null;
+    // });
   }
 
   search() {
@@ -25,6 +24,6 @@ export default class extends Controller {
 
     this.timeout = setTimeout(() => {
       this.element.requestSubmit();
-    }, 200);
+    }, 400);
   }
 }
