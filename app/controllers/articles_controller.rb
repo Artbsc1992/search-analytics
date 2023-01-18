@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
   def index
+
     if params[:query].present? && params[:query].length > 2
       @articles = Article.search_by_title_and_content(params[:query])
       create_search(params[:query], current_user.id)

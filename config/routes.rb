@@ -3,7 +3,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  authenticated :user do
+    root "articles#index", as: :authenticated_root
+  end
+
   resources :articles, only: [:index]
 
   root "articles#index"
+
+
 end

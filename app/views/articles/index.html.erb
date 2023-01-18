@@ -1,11 +1,5 @@
 <div class="index">
 
-  <div>
-    <h1>Most popular books</h1>
-  </div>
-
-
-
   <%= form_with(url: articles_path, method: :get, data: {controller: "search-input", turbo_frame: "articles", turbo_action: "advance"}, class: "search-bar" ) do |form| %>
     <%= form.text_field :query, 
       value: params[:query], 

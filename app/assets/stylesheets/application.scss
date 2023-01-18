@@ -20,7 +20,7 @@ a {
 
 //custom settings
 
-//header
+//index 
 .index {
   display: flex;
   flex-direction: column;
@@ -28,13 +28,33 @@ a {
   align-items: center;
   padding: 0;
   width: 100%;
+}
 
-  h1 {
-    font-size: 32px;
+//navbar
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px #ccc;
+  width: 100%;
+
+  .nav-bar__logo {
+    font-size: 24px;
     font-weight: bolder;
-    padding: 3% 0 0 0;
-    width: 100%;
+  }
 
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+
+    li {
+      font-size: 16px;
+      font-weight: bolder;
+    }
   }
 }
 
@@ -96,3 +116,66 @@ a {
   box-shadow: 0 0 5px #ccc;
 }
 
+// Login form
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+
+  .login-form__title {
+    font-size: 24px;
+    font-weight: bolder;
+    padding: 10px 0;
+  }
+
+  .login-form__input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px 0;
+    width: 100%;
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+    }
+  }
+
+  .submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0 5% 0;
+    width: 100%;
+
+    .login-form__button {
+      padding: 10px;
+      border: 1px solid #0000FF;
+      background-color: #0000FF;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bolder;
+      color: #fff;
+      width: 50%;
+      align-self: center;
+    }
+
+  }
+
+  .login-form__button:hover {
+    background-color: #0000CC;
+    cursor: pointer;
+  }
+
+  .login-form__button:active {
+    background-color: #bebef7;
+    cursor: pointer;
+  }
+
+}
